@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  min-height: 100vh;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* INPUT SECTION */
+.box {
+  background: white;
+  width: 380px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.box h2 {
+  text-align: center;
+  color: #1e3c72;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2a5298;
+}
+
+input:disabled {
+  background: #f4f4f4;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.add-btn {
+  background: #28a745;
+  width: 48%;
+}
+
+.print-btn {
+  background: #007bff;
+  width: 48%;
+  float: right;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* BILL SECTION */
+#billBox {
+  background: white;
+  width: 750px;
+  max-width: 100%;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+#billh {
+  text-align: center;
+  color: #1e3c72;
+  margin-bottom: 10px;
+}
+
+.bill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: none;
+  padding: 10px;
+  text-align: center;
+}
+
+thead {
+  background: #1e3c72;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+tbody tr:hover {
+  background: #e8f0ff;
+}
+.pname {
+  word-break: break-word;
+}
+
+.amount {
+  color: blue;
+  font-weight: bold;
+}
+
+#grandTotal {
+  text-align: right;
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #28a745;
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box,
+  #billBox {
+    width: 100%;
+  }
+
+  .bill-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* PRINT */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #billBox,
+  #billBox * {
+    visibility: visible;
+  }
+
+  #billBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+}
